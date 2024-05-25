@@ -1,0 +1,328 @@
+/* General Body Styling */
+body {
+    margin: 0%;
+    background-color: #01204E; /* Navy blue background */   
+}
+
+/* Styling for Links */
+a {
+    color: white; /* White text for visibility against dark background */
+    text-decoration: none; /* No underline */
+    margin: 0 20px; /* Horizontal spacing */
+}
+
+/* Background Styling for Intro Section */
+.introBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('media/The\ sea.jpg'); /* Full-screen background image */
+    background-position: center center;
+    background-size: cover; /* Cover entire area */
+    background-repeat: no-repeat;
+    z-index: 1; /* Set layering */
+}
+
+/* Dark Overlay for Background Image */
+.introBackground::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3) 50%, rgba(1, 32, 78, 1)); /* Gradient overlay */
+    z-index: 2;
+}
+
+/* Container for Intro Text */
+.intro {
+    position: relative;
+    padding-top: 250px; /* Vertical spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 200px;
+    font-family: "Seaweed Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 3;
+    width: 100%;
+    pointer-events: none; /* Disable interactions */
+}
+
+/* Styling for Main Heading */
+.intro h1 {
+    margin: auto;
+    margin-top: 50px;
+    font-size: 40px;
+    margin-bottom: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Subtitle Styling */
+.intro h2 {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 400px;
+    text-align: center;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #E1D9D1; /* Light grey for contrast */
+}
+
+/* Additional Title Styling (unused but reserved) */
+.intro h3 {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Video Container Styling */
+.video-container {
+    position: relative;
+    width: 70%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain video aspect ratio */
+    margin: 50px auto;
+    overflow: hidden; /* Hide overflow */
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 10px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Ensure Video Fits Container */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* General Container Styling */
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 50px 0; /* Padding for top and bottom */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+}
+
+/* Background for Container */
+.containerBackground {
+    background-image: url('media/vidBackground.png');
+    background-size: cover; /* Cover entire area */
+    width: 80%;
+    margin: 100px auto;
+    margin-bottom: 0;
+    border-radius: 25px;
+}
+
+/* Additional Content Styling */
+.content {
+    width: 50%;
+    margin: 50px auto; /* Centering */
+}
+
+/* Styling for Images within a Flex Container */
+.pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin: 50px auto; /* Centering */
+}
+
+/* Image Styling */
+.pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px; /* Rounded corners */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Button Styling */
+.pic button {
+    background-color: #04A6B2; /* Light blue background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: "Dosis", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s; /* Smooth transition for hover effects */
+    width: 40%;
+}
+
+/* Styling for About Section */
+.about {
+    position: relative;
+    top: -40px; /* Overlap with the previous section */
+    background-color: #028391; /* Teal background */
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the order of flex items */
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    padding-bottom: 50px;
+    border-radius: 25px;
+    z-index: 2;
+}
+
+/* Outro Section Styling */
+.outro {
+    position: relative;
+    top: -60px; /* Overlap with the previous section */
+    color: white;
+    background-color: #344C64; /* Dark blue background */
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    padding-bottom: 50px;
+    border-radius: 0 0 25px 25px; /* Rounded bottom corners */
+}
+
+/* Classes for Visibility Control */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear; /* Delay visibility change */
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear; /* Smooth fade-in */
+}
+
+
+
+/* Media query for screens narrower than 768px (common breakpoint for tablets and mobile phones) */
+/* Media query for screens narrower than 768px */
+@media (max-width: 768px) {
+
+    /* Reduce margins and paddings on smaller screens */
+    body {
+        padding: 5%;
+        background-color: #01204E;
+    }
+
+    /* Adjust link spacing */
+    a {
+        margin: 0 10px;
+    }
+
+    /* Adjust the introBackground to better fit smaller screens */
+    .introBackground {
+        background-size: cover;
+    }
+
+    /* Simplify intro styling for better readability on small devices */
+    .intro {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    /* Adjust font sizes for readability on small screens */
+    .intro h1 {
+        font-size: 24px;
+        width: 90%; /* More width for better layout */
+    }
+
+    .intro h2 {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .intro h3 {
+        font-size: 14px;
+        width: 80%;
+    }
+
+    /* Optimize video container to fit within small screens and remove the background */
+    .video-container {
+        width: 90%;
+        margin: 250px auto 70px auto; /* Increased top and bottom margin to move the video down */
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+
+    /* Adjust general container settings for mobile */
+    .container, .containerBackground {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Content width adjustment */
+    .content {
+        width: 100%;
+        margin: 20px; /* Added margins for the content within the about section */
+    }
+
+    /* Image container adjustments for mobile */
+    .pic {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .pic img {
+        width: 100%; /* Ensure images are not oversized */
+    }
+
+    /* Button styles tailored for smaller touch targets */
+    .pic button {
+        padding: 15px 25px;
+        font-size: 14px;
+        width: 60%; /* Larger button for easier interaction */
+    }
+
+    /* Modify about section layout to stack elements and center text */
+    .about {
+        flex-direction: column;
+        text-align: center; /* Center text alignment */
+        padding: 20px;
+    }
+
+    /* Adjust outro layout and padding */
+    .outro {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    /* Visibility control classes are unchanged */
+}
